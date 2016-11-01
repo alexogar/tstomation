@@ -1,0 +1,52 @@
+{
+  "name": "tstomation",
+  "version": "0.0.0",
+  "description": "tstomation",
+  "license": "MIT",
+  "repository": "",
+  "author": "",
+  "keywords": [
+    ""
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "build": "npm run clean && npm run lint && echo Using TypeScript && tsc --version && tsc --pretty",
+    "test": "npm run build && ts-node node_modules/jasmine/bin/jasmine.js test/unit/**/*.spec.ts test/unit/*.spec.ts src/**/*.ts",
+    "test:coverage": "ts-node node_modules/istanbul/lib/cli.js cover -e .ts  -x \"*.d.ts\" -x \"*.spec.ts\" _mocha -- --compilers ts:ts-node/register -R spec test/unit/**/*.spec.ts test/unit/*.spec.ts",
+    "watch": "npm run build -- --watch",
+    "watch:test": "./node_modules/nodemon/bin/nodemon.js -e .ts -w src -w test/unit -w test/fixture --exec 'ts-node' node_modules/jasmine/bin/jasmine.js test/unit/**/*.spec.ts test/unit/*.spec.ts src/**/*.ts",
+    "protractor": "protractor"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.8"
+  },
+  "devDependencies": {
+    "@types/chai": "3.4.30",
+    "@types/chai-as-promised": "0.0.29",
+    "@types/node": "6.0.31",
+    "@types/sinon": "^1.16.31",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "istanbul": "^1.1.0-alpha.1",
+    "jasmine": "^2.5.2",
+    "nodemon": "^1.11.0",
+    "rimraf": "^2.5.4",
+    "sinon": "^1.17.6",
+    "source-map-support": "^0.4.3",
+    "ts-node": "^1.2.2",
+    "tslint": "3.15.1",
+    "typescript": "2.0.3"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "optionalDependencies": {
+    "protractor": "^4.0.9"
+  }
+}
