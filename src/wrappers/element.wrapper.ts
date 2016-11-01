@@ -10,7 +10,7 @@ export class ElementWrapperDelegate implements IElement<any> {
     }
 
     public get nativeElement(): any {
-        return this.nativeElement;
+        return this.element.nativeElement;
     }
 }
 

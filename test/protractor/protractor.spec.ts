@@ -12,6 +12,9 @@ const expect = chai.expect;
 
 beforeAll( () => {
     setup({framework: Framework.PROTRACTOR});
+    let width = 800;
+    let height = 600;
+    browser.driver.manage().window().setSize(width, height);
 });
 
 describe("Protractor:", () => {
@@ -40,7 +43,7 @@ describe("Protractor:", () => {
   it("should find button by selector", () => {
       let mainPage = new MainPage();
       open(mainPage);
-      expect(mainPage.siteMenu.isDisplayed).to.eventually.be.false;
+      expect(mainPage.siteMenu.isDisplayed).to.eventually.be.true;
   });
 
   it("should be able to click button", () => {
