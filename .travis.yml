@@ -14,3 +14,4 @@ script:
     - npm run webdriver-manager update
     - npm run protractor
     - npm build
+sudo: required
