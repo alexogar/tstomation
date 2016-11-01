@@ -21,7 +21,8 @@
     "test:coverage": "ts-node node_modules/istanbul/lib/cli.js cover -e .ts  -x \"*.d.ts\" -x \"*.spec.ts\" _mocha -- --compilers ts:ts-node/register -R spec test/unit/**/*.spec.ts test/unit/*.spec.ts",
     "watch": "npm run build -- --watch",
     "watch:test": "./node_modules/nodemon/bin/nodemon.js -e .ts -w src -w test/unit -w test/fixture --exec 'ts-node' node_modules/jasmine/bin/jasmine.js test/unit/**/*.spec.ts test/unit/*.spec.ts src/**/*.ts",
-    "protractor": "protractor"
+    "protractor": "protractor",
+    "webdriver-manager": "webdriver-manager"
   },
   "dependencies": {
     "reflect-metadata": "^0.1.8"
